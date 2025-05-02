@@ -1,0 +1,16 @@
+defaults:
+  - backbone: resnet50
+  - layers: ${model/net/backbone}
+  - masking_procedure: default
+
+_target_: ptame.models.components.ttame.build_ttame_pipeline
+_convert_: partial
+attention:
+  _target_: ptame.models.components.attention.ttame_attention.TtameAttention
+  _partial_: true
+input_dim:
+  - 1
+  - 3
+  - 224
+  - 224
+num_classes: 1000

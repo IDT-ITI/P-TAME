@@ -1,0 +1,15 @@
+defaults:
+  - model_checkpoint_last
+  - early_stopping
+  - fancy_progress_bar
+  - memory_format
+  - _self_
+
+model_checkpoint:
+  dirpath: ${paths.output_dir}/checkpoints
+  filename: "epoch_{epoch:03d}"
+  save_top_k: 0
+early_stopping:
+  monitor: "val/loss[1]"
+  patience: 100
+  divergence_threshold: 3 # stop training as soon as the monitored quantity becomes worse than this threshold

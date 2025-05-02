@@ -1,0 +1,36 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - data: imagenetsampleset
+  - model: pamela
+  - paths: default
+  - extras: default
+  - hydra: default
+  - experiment: results/pamela_map_printer.yaml
+
+map_printer:
+  _target_: ptame.utils.map_printer.MapPrinter
+  save_path: "printed_maps"
+  set_name: ${name}
+
+task_name: "print-map"
+
+tags: ["dev"]
+
+test: True
+
+# passing checkpoint path is not necessary
+ckpt_path: null
+
+# set matmul precision
+matmul:
+  _target_: torch.set_float32_matmul_precision
+  precision: "high"
+
+trainer:
+  max_epochs: 1
+
+map_data:
+  ids: [3, 8, 17, 54, 254, 500]
+  split: "val"

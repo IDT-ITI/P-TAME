@@ -1,0 +1,27 @@
+defaults:
+  - measures@val_measures: adic
+  - measures@test_measures:
+      - adic
+      - road
+  - loss: classic
+  - optimizer: adam
+
+_target_: ptame.models.ptame_module.PTAMELitModule
+# define net when using this default configuration
+
+scheduler:
+  name: "OneCycleLR"
+  scheduler:
+    _target_: torch.optim.lr_scheduler.OneCycleLR
+    _partial_: true
+    max_lr: ${model.optimizer.lr}
+    epochs: ${trainer.max_epochs}
+    # cycle_momentum: false
+  params:
+    interval: "step"
+    name: "LR"
+    frequency: 1
+
+# compile model for faster training with pytorch 2.0
+compile: false
+feature_contribution: false

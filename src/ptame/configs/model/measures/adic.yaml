@@ -1,0 +1,2 @@
+adic:
+  _target_: ptame.utils.measures.ADIC

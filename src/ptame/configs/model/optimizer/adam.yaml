@@ -1,0 +1,6 @@
+_target_: torch.optim.AdamW
+_partial_: true
+lr: 1.0e-4
+weight_decay: 0.01
+fused: true
+amsgrad: true

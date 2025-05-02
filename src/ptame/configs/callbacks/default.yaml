@@ -1,0 +1,14 @@
+defaults:
+  - model_checkpoint_last
+  - model_summary
+  - fancy_progress_bar
+  - memory_format
+  - _self_
+
+model_checkpoint:
+  dirpath: ${paths.output_dir}/checkpoints
+  filename: "epoch_{epoch:03d}"
+# early_stopping:
+#   monitor: "val/acc"
+#   patience: 100
+#   mode: "max"

@@ -1,0 +1,19 @@
+# @package _global_
+
+# to change the backbone model override model/net/backbone=(vgg16, resnet50, vit_b_16)
+# to change the search space override hparams_search/search_space=(adam, sgd, classic_loss)
+# to change the optimizer override model/optimizer=(adam, sgd)
+# to change the objectives override hparams_search/objectives=(road, adic, adic-all)
+# If you change the objectives, make sure to change the test measures in the model section as well
+
+defaults:
+  - defaults: default_ptame
+
+tags: ["resnet50", "road"]
+
+group: "random-init"
+name: "sweep"
+
+hparams_search:
+  name: "ptame_road_adam"
+  max_trials: 25

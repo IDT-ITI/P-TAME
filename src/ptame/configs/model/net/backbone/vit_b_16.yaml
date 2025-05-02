@@ -1,0 +1,2 @@
+_target_: torchvision.models.vit_b_16
+weights: "IMAGENET1K_V1"

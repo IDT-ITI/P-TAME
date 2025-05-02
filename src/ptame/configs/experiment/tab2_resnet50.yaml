@@ -1,0 +1,18 @@
+# @package _global_
+
+# to change the backbone model override model/net/backbone=(vgg16, resnet50, vit_b_16)
+# to change the optimizer override model/optimizer=(adam, sgd)
+
+defaults:
+  - defaults: default_ptame
+  - override /model: t-tame
+  - override /model/optimizer: sgd
+
+model:
+  feature_contribution: true
+  compile: true
+  optimizer:
+    fused: true
+
+trainer:
+  max_epochs: 8

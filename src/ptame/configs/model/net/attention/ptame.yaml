@@ -1,0 +1,20 @@
+defaults:
+  - model: resnet18
+
+_target_: ptame.models.attention.PTAMEAttention
+_convert_: "partial"
+input_dim:
+  - 2
+  - 3
+  - 224
+  - 224
+fuser_bias: false
+num_classes: 1000
+unfreeze: 0
+cascading: true
+only_layer_train: false
+normalizers:
+  - _target_: torch.sigmoid
+    _partial_: true
+  - _target_: ptame.utils.masking_utils.minmax_4d
+    _partial_: true

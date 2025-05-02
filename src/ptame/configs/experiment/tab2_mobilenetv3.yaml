@@ -1,0 +1,21 @@
+# @package _global_
+
+# to change the backbone model override model/net/backbone=(vgg16, resnet50, vit_b_16)
+# to change the optimizer override model/optimizer=(adam, sgd)
+
+defaults:
+  - defaults: default_ptame
+  - override /model/net/backbone: resnet50
+  - override /model/net/attention/model: mobilenet
+
+model:
+  feature_contribution: true
+  compile: true
+  optimizer:
+    lr: 1.0e-3
+    weight_decay: 0.017170843647038966
+  loss:
+    ce_coeff: 0.051073698326945305
+    area_coeff: 0.9454752532765268
+    smoothness_coeff: 0.003451048396527767
+    smoothness_border_penalty: 0

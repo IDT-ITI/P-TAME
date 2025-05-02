@@ -1,0 +1,22 @@
+# @package _global_
+
+# to execute this experiment run:
+# python src/train.py experiment=example
+# override an entire entry in the default configuration:
+defaults:
+  - override /model: pamela
+  - override /model/net/backbone: vit_b_16
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+seed: 12345
+
+map_data:
+  ids: [8, 17]
+  split: "val"
+
+map_printer:
+  set_name: "ptame-vit_b_16"
+
+ckpt_path: "logs/checkpoints/ptame_vit_b_16.ckpt"

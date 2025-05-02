@@ -1,0 +1,6 @@
+_target_: torch.optim.SGD
+_partial_: true
+lr: 1.0e-3
+weight_decay: 5.0e-4
+momentum: 0.9
+nesterov: true

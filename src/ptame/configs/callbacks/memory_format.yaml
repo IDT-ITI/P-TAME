@@ -1,0 +1,3 @@
+memory_format:
+  _target_: ptame.utils.memory_format.MemoryFormat
+  convert_input: true

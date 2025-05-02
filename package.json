@@ -1,0 +1,15 @@
+{
+    "devDependencies": {
+        "commitizen": "^4.3.0",
+        "cz-git": "^1.9.4"
+    },
+    "scripts": {
+        "commit": "CZ_EDITOR='code --wait' cz"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-git",
+            "czConfig": "./cz.config.js"
+        }
+    }
+}

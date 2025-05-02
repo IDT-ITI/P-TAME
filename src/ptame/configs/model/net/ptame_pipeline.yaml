@@ -1,0 +1,14 @@
+defaults:
+  - backbone: vgg16
+  - attention: ptame
+  - masking_procedure: default
+  - hooks: null
+
+_target_: ptame.models.components.ptame_pipeline.PtamePipeline
+train_map_select:
+  _target_: ptame.utils.masking_utils.random_map_select
+  _partial_: true
+matching_map_select:
+  _target_: ptame.utils.masking_utils.single_map_select
+  _partial_: true
+backbone_eval: true

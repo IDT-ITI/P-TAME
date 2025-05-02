@@ -1,0 +1,9 @@
+model:
+  _target_: torchvision.models.mnasnet0_5
+  weights: "DEFAULT"
+
+layers:
+  - "layers.13"
+  - "layers.14"
+  - "layers.15"
+  - "layers.16"

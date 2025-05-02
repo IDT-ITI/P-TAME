@@ -1,0 +1,52 @@
+# @package _global_
+
+# specify here default configuration
+# order of defaults determines the order in which configs override each other
+defaults:
+  - trainer: gpu
+  - _self_
+  - data: imagenet
+  - model: ptame_pipeline
+  - callbacks: sweep
+  - logger: csv # set logger here or use command line (e.g. `python train.py logger=tensorboard`)
+  - paths: default
+  - extras: default
+  - hydra: sweep
+
+  # config for ax optimization
+  - hparams_search: ax
+
+  # experiment configs allow for version control of specific hyperparameters
+  # e.g. best hyperparameters for given model and datamodule
+  - experiment: ptame_sweep
+
+  # resume ax from json
+  - resume_ax: null
+
+  # optional local config for machine/user specific settings
+  # it's optional since it doesn't need to exist and is excluded from version control
+  - optional local: default
+
+  # debugging config (enable through command line, e.g. `python train.py debug=default)
+  - debug: null
+
+# task name, determines output directory path
+task_name: "train"
+
+# tags to help you identify your experiments
+# you can overwrite this in experiment configs
+# overwrite from command line with `python train.py tags="[first_tag, second_tag]"`
+tags: ["dev"]
+
+# seed for random number generators in pytorch, numpy and python.random
+seed: null
+
+# set matmul precision
+matmul:
+  _target_: torch.set_float32_matmul_precision
+  precision: "high"
+
+trainer:
+  val_check_interval: 0.2
+  min_epochs: 0
+  max_epochs: 1

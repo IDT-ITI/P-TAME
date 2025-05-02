@@ -1,0 +1,13 @@
+_target_: ptame.models.components.rand_model.cascading_random_model
+model:
+  _target_: torchvision.models.vit_b_16
+  weights: "IMAGENET1K_V1"
+rand_model:
+  _target_: torchvision.models.vit_b_16
+layer_key: "encoder.layers.encoder_layer_0"
+# layer_key: "encoder.layers.encoder_layer_3"
+# layer_key: "encoder.layers.encoder_layer_6"
+# layer_key: "encoder.layers.encoder_layer_9"
+# layer_key: "encoder.layers.encoder_layer_11"
+random_before: true
+random_after: false

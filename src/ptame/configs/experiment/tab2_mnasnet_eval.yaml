@@ -1,0 +1,26 @@
+# @package _global_
+
+# to change the backbone model override model/net/backbone=(vgg16, resnet50, vit_b_16)
+# to change the optimizer override model/optimizer=(adam, sgd)
+
+defaults:
+  - defaults: default_pamela
+  - override /model/net/backbone: resnet50
+  - override /model/net/attention/model: mnasnet
+
+model:
+  feature_contribution: true
+  compile: true
+  optimizer:
+    lr: 1.0e-4
+    weight_decay: 0.0025160500121080907
+    fused: false
+    foreach: true
+  loss:
+    ce_coeff: 0.16651611180242515
+    area_coeff: 00.8334838882443403
+    smoothness_coeff: 0
+    smoothness_border_penalty: 0
+
+train: false
+ckpt_path: "logs/checkpoints/ptame_mnasnet_resnet.ckpt"

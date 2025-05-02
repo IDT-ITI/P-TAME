@@ -1,0 +1,16 @@
+defaults:
+  - default
+  - net: null
+  - override loss: null
+  - override optimizer: adam
+
+_target_: ptame.models.cv_module.CVModule
+
+loss:
+  _target_: torch.nn.CrossEntropyLoss
+
+net:
+  _target_: torchvision.models.resnet18
+
+val_measures: null
+test_measures: null

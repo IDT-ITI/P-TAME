@@ -1,0 +1,21 @@
+# @package _global_
+
+# to change the backbone model override model/net/backbone=(vgg16, resnet50, vit_b_16)
+# to change the optimizer override model/optimizer=(adam, sgd)
+
+defaults:
+  - defaults: default_ptame
+  - override /model/net/backbone: vgg16
+
+model:
+  compile: true
+  optimizer:
+    lr: 1.0e-4
+    weight_decay: 0.13324
+  loss:
+    ce_coeff: 0.07278
+    area_coeff: 0.977712
+    smoothness_coeff: 0.0001
+
+train: false
+ckpt_path: "logs/checkpoints/ptame_vgg16.ckpt"

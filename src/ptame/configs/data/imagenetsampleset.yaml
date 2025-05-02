@@ -1,0 +1,10 @@
+_target_: ptame.utils.map_printer.ImageNetSampleSet
+datamodule:
+  _target_: ptame.data.imagenet_datamodule.ImageNetDataModule
+  data_dir: ${paths.data_dir}ImageNet
+  datalist: ${paths.data_dir}datalists
+  batch_size: 32 # Needs to be divisible by the number of devices (e.g., if in a distributed setup)
+  num_workers: 15
+  pin_memory: True
+ids: ${map_data.ids}
+split: ${map_data.split}

@@ -1,0 +1,13 @@
+_target_: ptame.models.components.rand_model.cascading_random_model
+model:
+  _target_: torchvision.models.vgg16
+  weights: "IMAGENET1K_V1"
+rand_model:
+  _target_: torchvision.models.vgg16
+layer_key: "features.4"
+# layer_key: 'features.9'
+# layer_key: 'features.16'
+# layer_key: 'features.23'
+# layer_key: 'features.30'
+random_before: true
+random_after: false

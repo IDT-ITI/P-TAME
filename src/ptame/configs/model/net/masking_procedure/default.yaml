@@ -1,0 +1,14 @@
+_target_: ptame.utils.masking_utils.norm_resize_mask
+unnorm:
+  _target_: ptame.data.imagenet_datamodule.norm
+  _partial_: true
+  reverse: true
+norm:
+  _target_: ptame.data.imagenet_datamodule.norm
+  _partial_: true
+resize:
+  _target_: ptame.utils.masking_utils.basic_resize
+  _partial_: true
+masking:
+  _target_: ptame.utils.masking_utils.naive_masking
+  _partial_: true

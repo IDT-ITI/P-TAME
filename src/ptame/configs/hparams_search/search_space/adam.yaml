@@ -1,0 +1,50 @@
+params:
+  model.optimizer.lr:
+    type: choice
+    value_type: float
+    is_ordered: true
+    sort_values: true
+    values: [0.00001, 0.0001, 0.001]
+  model.optimizer.weight_decay:
+    type: range
+    value_type: float
+    bounds: [0.0000001, 1.0]
+    log_scale: true
+  model.loss.ce_coeff:
+    type: range
+    value_type: float
+    bounds: [0.0, 1.0]
+  model.loss.area_coeff:
+    type: range
+    value_type: float
+    bounds: [0.0, 1.0]
+  model.loss.smoothness_border_penalty:
+    type: choice
+    value_type: float
+    is_ordered: true
+    sort_values: true
+    values: [0.0, 0.3, 0.5]
+  model.loss.area_loss_power:
+    type: choice
+    value_type: float
+    is_ordered: true
+    sort_values: true
+    values: [0.3, 0.5, 1]
+
+status_quo:
+  model.optimizer.lr: 1.0e-3
+  model.optimizer.weight_decay: 0.01
+  model.loss.ce_coeff: 0.427
+  model.loss.area_coeff: 0.569
+  model.loss.smoothness_border_penalty: 0.3
+  model.loss.area_loss_power: 0.3
+
+composition_constraint:
+  total: 1
+  independent:
+    - "model.loss.ce_coeff"
+    - "model.loss.area_coeff"
+  target: "model.loss.smoothness_coeff"
+parameter_constraints:
+  - "model.loss.ce_coeff + model.loss.area_coeff <= 1.0"
+  - "model.loss.ce_coeff + model.loss.area_coeff >= 0.85"

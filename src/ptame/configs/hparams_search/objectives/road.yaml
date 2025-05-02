@@ -1,0 +1,22 @@
+config:
+  _convert_: object
+  morf:
+    _target_: ax.service.ax_client.ObjectiveProperties
+    threshold: 0.36
+    minimize: true
+  lerf:
+    _target_: ax.service.ax_client.ObjectiveProperties
+    threshold: 0.60
+    minimize: false
+
+mapping:
+  morf: "test/MoRF"
+  lerf: "test/LeRF"
+
+worst_result:
+  morf:
+    - 0.36
+    - null
+  lerf:
+    - 0.60
+    - null

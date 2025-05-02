@@ -1,0 +1,9 @@
+defaults:
+  - search_space: adam
+  - objectives: road
+
+max_trials: 50
+name: "ptame_road_sgd"
+client:
+  verbose_logging: true
+  random_seed: 42

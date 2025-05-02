@@ -1,0 +1,9 @@
+road_morf:
+  _target_: ptame.utils.measures.ROAD
+  MoRF: true
+  std: true
+
+road_lerf:
+  _target_: ptame.utils.measures.ROAD
+  MoRF: false
+  std: true
