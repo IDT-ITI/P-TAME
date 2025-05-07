@@ -1,7 +1,7 @@
 defaults:
   - model: resnet18
 
-_target_: ptame.models.attention.PTAMEAttention
+_target_: ptame.models.components.attention.ptame_attention.PTAMEAttention
 _convert_: "partial"
 input_dim:
   - 2

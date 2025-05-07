@@ -3,9 +3,12 @@ from typing import Any
 
 import torch
 import torchvision.transforms.v2 as transforms
+from importlib_resources import as_file, files
 from lightning import LightningDataModule
 from torch.utils.data import DataLoader, Dataset, Subset, random_split
 from torchvision.datasets import ImageNet, Imagenette
+
+import ptame
 
 
 def norm(x: torch.Tensor, reverse: bool = False) -> torch.Tensor:
@@ -67,7 +70,6 @@ class ImageNetDataModule(LightningDataModule):
     def __init__(
         self,
         data_dir: str = "data/ImageNet",
-        datalist: str = "data/datalists",
         batch_size: int = 64,
         num_workers: int = 0,
         pin_memory: bool = False,
@@ -201,28 +203,31 @@ class ImageNetDataModule(LightningDataModule):
                     [0.5, 0.5],
                 )
             else:
-                self.data_val = Subset(
-                    dataset(
-                        self.hparams.data_dir,
-                        split="val",
-                        transform=self.val_tsfm,
-                    ),
-                    torch.load(
-                        Path(self.hparams.datalist) / "val_set.pt",
-                        weights_only=True,
-                    ),
-                )
-                self.data_test = Subset(
-                    dataset(
-                        self.hparams.data_dir,
-                        split="val",
-                        transform=self.val_tsfm,
-                    ),
-                    torch.load(
-                        Path(self.hparams.datalist) / "test_set.pt",
-                        weights_only=True,
-                    ),
-                )
+                datalist_source = files(ptame.datalists)
+                with as_file(datalist_source.joinpath("val_set.pt")) as f:
+                    self.data_val = Subset(
+                        dataset(
+                            self.hparams.data_dir,
+                            split="val",
+                            transform=self.val_tsfm,
+                        ),
+                        torch.load(
+                            f,
+                            weights_only=True,
+                        ),
+                    )
+                with as_file(datalist_source.joinpath("test_set.pt")) as f:
+                    self.data_test = Subset(
+                        dataset(
+                            self.hparams.data_dir,
+                            split="val",
+                            transform=self.val_tsfm,
+                        ),
+                        torch.load(
+                            f,
+                            weights_only=True,
+                        ),
+                    )
 
     def train_dataloader(self) -> DataLoader[Any]:
         """Create and return the train dataloader.

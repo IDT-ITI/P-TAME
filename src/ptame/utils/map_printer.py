@@ -8,11 +8,13 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 import torchshow as ts
+from importlib_resources import as_file, files
 from PIL import Image
 from torch.utils.data import Subset
 from torchvision.datasets import ImageNet
 from torchvision.transforms import transforms
 
+import ptame
 from ptame.data.imagenet_datamodule import ImageNetDataModule
 from ptame.utils.masking_utils import gaussian_masking, norm_mask
 
@@ -227,16 +229,17 @@ class ImageNetSampleSet(SampleSet):
             split="val",
             transform=self.tsfm,
         )
-        self.dataset = Subset(
-            Subset(
-                self.imagenet,
-                torch.load(
-                    Path(self.datamodule.hparams.datalist) / f"{split}_set.pt",
-                    weights_only=True,
+        with as_file(files(ptame.datalists).joinpath(f"{split}_set.pt")) as f:
+            self.dataset = Subset(
+                Subset(
+                    self.imagenet,
+                    torch.load(
+                        f,
+                        weights_only=True,
+                    ),
                 ),
-            ),
-            ids,
-        )
+                ids,
+            )
 
         if img_path := kwargs.get("single_image", False):
             self.ids = [0]

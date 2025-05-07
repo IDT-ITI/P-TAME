@@ -1,7 +1,7 @@
 # P-TAME
 
 <p align="center">
-  <img width="350" src="ptame_logo.png">
+  <img width="350" src="https://raw.githubusercontent.com/IDT-ITI/P-TAME/8879d7296feb76647d582a828fa77b4860cc8594/ptame_logo.png">
 </p>
 <!--<h1 align="center"><b>Quantus</b></h1>-->
 <h3 align="center"><b>Explain Any Image Classifier with Trained Perturbations</b></h3>
@@ -22,10 +22,10 @@ _Don't hesitate to open a new issue if you encounter problems while using this m
 - [Installation](#installation)
   - [Package requirements](#package-requirements)
 - [Project structure](#project-structure)
-- [Getting started](#getting-started)
 - [Tutorials](#tutorials)
 - [Citation](#citation)
 - [Acknowledgement](#acknowledgement)
+- [License](#license)
 
 ## Introduction
 
@@ -86,18 +86,6 @@ The directory structure of new project looks like this:
         └── utils            <- Utility module
 ```
 
-## Getting started
-
-```bash
-# clone project
-git clone https://github.com/marios1861/PAMELA
-cd PAMELA
-
-# create conda environment with dependencies
-conda env create -f environment.yaml -n pamela
-conda activate pamela
-```
-
 ## Tutorials
 
 To learn how to reproduce the results in tables 1 and 2 of the [paper](https://arxiv.org/abs/2501.17813), and how to apply the method to classifiers besides the ones included in the experiments, refer to this page in the [documentation](<>).
@@ -138,4 +126,3 @@ This code is provided for academic, non-commercial use only. Please also check f
 Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation provided with the distribution.
 
 This software is provided by the authors "as is" and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall the authors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.
-

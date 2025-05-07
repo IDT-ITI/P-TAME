@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ptame"
+authors = [{name = "Mariano V. Ntrougkas", email = "ntrougkas@iti.gr"}]
+description = "Explain Any Image Classifier with Trained Perturbations"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "LicenseRef-Custom-Academic-NonCommercial"
+license-files = ["LICEN[CS]E*"]
+version = "1.0.2"
+dependencies = [
+    "lightning",
+    'hydra-core',
+    "torch",
+    "torchvision",
+    "torchmetrics",
+    "opencv-python-headless",
+    "numpy",
+    "pandas",
+    "ax-platform",
+    "hydra-colorlog",
+    "rich",
+    "importlib_resources",
+     "torchshow"
+]
+
+[project.urls]
+homepage = "https://github.com/IDT-ITI/P-TAME"
+source = "https://github.com/IDT-ITI/P-TAME.git"
+documentation = "https://idt-iti.github.io/P-TAME/ptame.html"
+issues = "https://github.com/IDT-ITI/P-TAME/issues"
+
+[project.optional-dependencies]
+dev = ["wandb", "pre-commit", "pdoc", "seaborn", "scipy"]
+
+[project.scripts]
+ptame-train = "ptame.train:main"
+ptame-print = "ptame.print_map:main"
+ptame-sweep = "ptame.ax_sweep:main"
