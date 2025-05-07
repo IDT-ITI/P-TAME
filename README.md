@@ -20,7 +20,6 @@ _Don't hesitate to open a new issue if you encounter problems while using this m
 
 - [Introduction](#introduction)
 - [Installation](#installation)
-  - [Package requirements](#package-requirements)
 - [Project structure](#project-structure)
 - [Tutorials](#tutorials)
 - [Citation](#citation)
@@ -33,25 +32,15 @@ The adoption of Deep Neural Networks (DNNs) in critical fields where predictions
 
 ## Installation
 
-If you already have [PyTorch](https://pytorch.org/) installed on your machine,
-the latest version of P-TAME can be obtained from [PyPI](https://pypi.org/project/ptame/) as follows:
+The latest version of P-TAME can be obtained from [PyPI](https://pypi.org/project/ptame/) as follows:
 
 ```bash
 pip install ptame
 ```
 
-### Package requirements
-
-The package requirements are as follows:
-
-```text
-python>=3.10.0
-torch>=2.0.0
-```
-
 ## Project structure
 
-The directory structure of new project looks like this:
+The directory structure of the project is explained below:
 
 ```tree
 ├── data               <- Project data
@@ -88,11 +77,11 @@ The directory structure of new project looks like this:
 
 ## Tutorials
 
-To learn how to reproduce the results in tables 1 and 2 of the [paper](https://arxiv.org/abs/2501.17813), and how to apply the method to classifiers besides the ones included in the experiments, refer to this page in the [documentation](<>).
+To learn how to reproduce the results in tables 1 and 2 of the [paper](https://arxiv.org/abs/2501.17813), and how to apply the method to classifiers besides the ones included in the experiments, refer to the[documentation](https://idt-iti.github.io/P-TAME/).
 
 ## Citation
 
-If you fine this XAI explainability method interesting or useful in your research, use the following Bibtex annotation to cite us:
+If you find this XAI explainability method interesting or useful in your research, use the following Bibtex annotation to cite us:
 
 ```bibtex
 @misc{ntrougkas2025ptameexplainimageclassifier,
