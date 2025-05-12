@@ -95,7 +95,7 @@ You may want to also consult and, if you find useful, also cite our earlier work
 
 - M. V. Ntrougkas, N. Gkalelis, and V. Mezaris, “T-TAME: Trainable Attention Mechanism for Explaining Convolutional Networks and Vision Transformers.”, IEEE Access, 2024. [doi: 10.1109/ACCESS.2024.3405788](https://doi.org/10.1109/ACCESS.2024.3405788).
 - M. Ntrougkas, N. Gkalelis and V. Mezaris, "TAME: Attention Mechanism Based Feature Fusion for Generating Explanation Maps of Convolutional Neural Networks," in 2022 IEEE International Symposium on Multimedia (ISM), Italy, 2022 pp. 58-65. [doi: 10.1109/ISM55400.2022.00014](https://doi.org/10.1109/ISM55400.2022.00014).
-- Gkartzonika, I., Gkalelis, N., Mezaris, V. (2023). Learning Visual Explanations for DCNN-Based Image Classifiers Using an Attention Mechanism. In: Karlinsky, L., Michaeli, T., Nishino, K. (eds) Computer Vision – ECCV 2022 Workshops. ECCV 2022. Lecture Notes in Computer Science, vol 13808. Springer, Cham. <https://doi.org/10.1007/978-3-031-25085-9_23>
+- Gkartzonika, I., Gkalelis, N., Mezaris, V. (2023). Learning Visual Explanations for DCNN-Based Image Classifiers Using an Attention Mechanism. In: Karlinsky, L., Michaeli, T., Nishino, K. (eds) Computer Vision – ECCV 2022 Workshops. ECCV 2022. Lecture Notes in Computer Science, vol 13808. Springer, Cham. [doi: 10.1007/978-3-031-25085-9_23](https://doi.org/10.1007/978-3-031-25085-9_23).
 
 ## Acknowledgement
 
