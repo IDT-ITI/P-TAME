@@ -84,16 +84,18 @@ To learn how to reproduce the results in tables 1 and 2 of the [paper](https://a
 If you find this XAI explainability method interesting or useful in your research, use the following Bibtex annotation to cite us:
 
 ```bibtex
-@misc{ntrougkas2025ptameexplainimageclassifier,
-      title={P-TAME: Explain Any Image Classifier with Trained Perturbations},
-      author={Mariano V. Ntrougkas and Vasileios Mezaris and Ioannis Patras},
-      year={2025},
-      eprint={2501.17813},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2501.17813},
-}
+@ARTICLE{ntrougkas2025ptameexplainimageclassifier,
+  author={Ntrougkas, Mariano V. and Mezaris, Vasileios and Patras, Ioannis},
+  journal={IEEE Open Journal of Signal Processing}, 
+  title={P-TAME: Explain Any Image Classifier with Trained Perturbations}, 
+  year={2025},
+  doi={10.1109/OJSP.2025.3568756}}
 ```
+You may want to also consult and, if you find useful, also cite our earlier works on this topic (methods T-TAME, TAME, L-CAM-Img & L-CAM-Fm):
+
+- M. V. Ntrougkas, N. Gkalelis, and V. Mezaris, “T-TAME: Trainable Attention Mechanism for Explaining Convolutional Networks and Vision Transformers.”, IEEE Access, 2024. [doi: 10.1109/ACCESS.2024.3405788](https://doi.org/10.1109/ACCESS.2024.3405788).
+- M. Ntrougkas, N. Gkalelis and V. Mezaris, "TAME: Attention Mechanism Based Feature Fusion for Generating Explanation Maps of Convolutional Neural Networks," in 2022 IEEE International Symposium on Multimedia (ISM), Italy, 2022 pp. 58-65. [doi: 10.1109/ISM55400.2022.00014](https://doi.org/10.1109/ISM55400.2022.00014).
+- Gkartzonika, I., Gkalelis, N., Mezaris, V. (2023). Learning Visual Explanations for DCNN-Based Image Classifiers Using an Attention Mechanism. In: Karlinsky, L., Michaeli, T., Nishino, K. (eds) Computer Vision – ECCV 2022 Workshops. ECCV 2022. Lecture Notes in Computer Science, vol 13808. Springer, Cham. <https://doi.org/10.1007/978-3-031-25085-9_23>
 
 ## Acknowledgement
 
