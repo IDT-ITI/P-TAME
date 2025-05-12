@@ -81,6 +81,9 @@ To learn how to reproduce the results in tables 1 and 2 of the [paper](https://a
 
 ## Citation
 
+This github repository provides scripts and trained models from our paper: 
+M. Ntrougkas, V. Mezaris, I. Patras, "P-TAME: Explain Any Image Classifier with Trained Perturbations", IEEE Open Journal of Signal Processing, 2025. [doi: 10.1109/OJSP.2025.3568756](https://doi.org/10.1109/OJSP.2025.3568756).
+
 If you find this XAI explainability method interesting or useful in your research, use the following Bibtex annotation to cite us:
 
 ```bibtex
