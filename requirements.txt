@@ -9,7 +9,7 @@ git+https://github.com/dr-aheydari/SoftAdapt.git
 opencv-python
 
 # --------- data --------- #
-numpy<2.2.0
+numpy<2.3.0
 scipy
 seaborn
 
